@@ -1,0 +1,19 @@
+
+{
+    "compilerOptions": {
+      "target": "es2017",
+      "lib": ["es2017"],
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "experimentalDecorators":true,
+      "emitDecoratorMetadata": true,
+      "sourceMap": true,
+      "outDir": "./dist",
+      "declaration": false
+    },
+    "exclude": [
+      "node_modules",
+      "dist",
+      "**/*.spec.ts"
+    ]
+}
