@@ -7,7 +7,7 @@ export class JsonRpcService {
 
     private req = axios.default;
 
-    public static url: string = undefined;
+    public static url: string = "URL_API_JSON_RPC"; 
 
     public async executeMethods(name: string, ...params: any[]) {
         if (!JsonRpcService.url) throw new BadRequestException("The JSON RPC url has not been set, please call POST '/api/jsonrpc/' with the expected URL");
@@ -16,8 +16,12 @@ export class JsonRpcService {
             method: `${name}`,
             params: params,
             id: 1
-        }
-        const res =  await this.req.post(JsonRpcService.url, data);
+		}
+        const res =  await this.req.post(JsonRpcService.url, data, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
         if (res.data.error) {
             throw new BadRequestException(`Error when executing the command : ${res.data.error.message}`);
         }
