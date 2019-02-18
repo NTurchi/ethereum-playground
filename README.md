@@ -1,4 +1,4 @@
 # Ethereum playground repository
 
-Basic repository for understanding Ethereum without some development best practice.
+Basic repository for understanding Ethereum without development best practice.
  
